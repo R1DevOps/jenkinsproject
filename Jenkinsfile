@@ -9,13 +9,14 @@ pipeline {
                     ls -lah
                 '''
             }
-        stage('Test') {
+         stage('Test') {
             steps {
                 sh './gradlew check'
             }
         }
+        }
     }
-    post {
+  post {
         always {
             junit 'build/reports/**/*.xml'
         }
