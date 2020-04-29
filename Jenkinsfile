@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                "ssh root@localhost hostname"
+                'ssh root@localhost -p 12908160 \'hostname\''
             }
         }
         stage("Second step") {
