@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                \hostname\''
+                \'hostname\'
             }
         }
         stage("Second step") {
