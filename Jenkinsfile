@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                cmd \'hostname\'
+                println "hostname"
             }
         }
         stage("Second step") {
