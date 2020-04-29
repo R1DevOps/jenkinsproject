@@ -1,23 +1,14 @@
-#!groovy
-// Check slave properties
-properties([disableConcurrentBuilds()])
-
 pipeline {
-    agent { 
-        label 'master'
-        }
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-        timestamps()
-    }
-     stages {
-        stage ('Example') {
+    agent any
+    stages {
+        stage('Build') {
             steps {
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh 'ssh root@10.100.78.214 \'hostname\''
-                sh 'ssh root@10.100.78.214 \'uptime\''
-                sh 'ssh root@10.100.78.214 \'rm -rf /tmp/var\''
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                    ls -lah
+                '''
             }
+        }
     }
-}
 }
