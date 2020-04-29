@@ -11,7 +11,7 @@ pipeline {
         timestamps()
     }
      stages {
-        stage('Example') {
+        stage ('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
