@@ -19,7 +19,7 @@ pipeline {
            }
         }
      }
-      stage("send index.html to www/html on serv") {
+      stage ("send index.html to www/html on serv") {
             steps {
                 echo " ============== start to send =================="
                 dir ('R1DevOps/web') {
