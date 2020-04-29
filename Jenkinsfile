@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                println "hostname"
+                echo "hostname"
             }
         }
         stage("Second step") {
