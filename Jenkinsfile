@@ -16,8 +16,8 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
             steps {
-                echo "hostname"
-                echo "time"
+                sh "echo hostname"
+                sh "echo time"
             }
     }
 }
