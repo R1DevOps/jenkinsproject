@@ -6,6 +6,7 @@ pipeline {
     agent { 
         label 'master'
         }
+triggers { pollSCM('* * * * *') }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
@@ -16,4 +17,5 @@ pipeline {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
     }
+}
 }
