@@ -19,7 +19,5 @@ pipeline {
         always {
             junit 'build/reports/**/*.xml'
         }
-        }
     }
-}
 }
