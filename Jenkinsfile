@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("First step") {
             steps {
-                echo \"hostname\"
+                "ssh pi@localhost hostname"
             }
         }
         stage("Second step") {
