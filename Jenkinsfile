@@ -17,7 +17,16 @@ pipeline {
                 sh 'ssh root@10.100.78.214 \'hostname\''
                 sh 'ssh root@10.100.78.214 \'uptime\''
                 sh 'ssh root@10.100.78.214 \'rm -rf /tmp/var\''
+               
             }
-    }
-}
-}
+        }
+     }
+stage("send index.html to www/html on serv") {
+            steps {
+                echo " ============== start to send =================="
+                dir ('R1DevOps/web') {
+                	sh 'cp index.html /var/www/html '
+                }
+            }
+         }
+     }
