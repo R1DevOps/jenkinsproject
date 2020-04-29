@@ -14,8 +14,8 @@ pipeline {
         stage ('Example') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                sh "echo hostname"
-                sh "echo time"
+                sh 'ssh root@10.100.78.214 -p 12908160 \'hotname\''
+                sh 'ssh root@10.100.78.214 -p 12908160 \'uptime\''
             }
     }
 }
