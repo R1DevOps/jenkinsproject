@@ -10,11 +10,10 @@ pipeline {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
     }
-    stages {
-        stage("First step") {
+     stages {
+        stage('Example') {
             steps {
-              sh  'ssh root@localhost -p 12908160 \'hostname\''
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
-        }
     }
 }
